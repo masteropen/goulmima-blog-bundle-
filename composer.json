@@ -2,7 +2,7 @@
   "name": "goulmima/blog-bundle",
   "type": "symfony-bundle",
   "description": "symfony bundle demo",
-  "license": "",
+  "license": "proprietary",
   "authors": [
     {
       "name": "Majid noureddine",

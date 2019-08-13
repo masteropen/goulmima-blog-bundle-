@@ -6,12 +6,12 @@ This version of the bundle requires Symfony 4.3+.
 Installation
 ============
  
-### Step 1 : Download MidoBlogBundle using composer
+### Step 1 : Download GoulmimaBlogBundle using composer
  
 Open a command console, enter your project directory and execute:
  
 ```console
-$ composer require mido/blog-bundle
+$ composer require goulmima/blog-bundle
 ```
 
 ### Step 2 : Enable the Bundle
@@ -24,7 +24,7 @@ in the `config/bundles.php` file of your project (if you are using symfony flex,
 
 return [
     // ...
-    Mido\BlogBundle\MidoBlogBundle::class => ['all' => true],
+    Goulmima\BlogBundle\GoulmimaBlogBundle::class => ['all' => true],
 ];
 ```
 For applications don't using symfony flex, you need to register the bundle:
@@ -35,7 +35,7 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-        new Mido\BlogBundle\MidoBlogBundle(),
+        new Goulmima\BlogBundle\GoulmimaBlogBundle(),
     );
 }
 ```
