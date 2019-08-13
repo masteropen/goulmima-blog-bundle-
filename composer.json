@@ -1,0 +1,29 @@
+{
+  "name": "acme/blog-bundle",
+  "type": "symfony-bundle",
+  "description": "symfony bundle demo",
+  "license": "",
+  "authors": [
+    {
+      "name": "Majid noureddine",
+      "email": "noureddine.digitalworks@gmail.com"
+    }
+  ],
+  "autoload" : {
+    "psr-4": {
+      "Acme\\BlogBundle\\": ""
+    },
+    "exclude-from-classmap": [
+      "/Tests/"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Acme\\BlogBundle\\Tests\\": "/Tests/"
+    }
+  },
+  "require": {
+    "php": "^7.1.3",
+    "symfony/framework-bundle": "^4.3"
+  }
+}
