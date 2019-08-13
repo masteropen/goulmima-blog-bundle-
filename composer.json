@@ -1,5 +1,5 @@
 {
-  "name": "acme/blog-bundle",
+  "name": "mido/blog-bundle",
   "type": "symfony-bundle",
   "description": "symfony bundle demo",
   "license": "",
@@ -11,7 +11,7 @@
   ],
   "autoload" : {
     "psr-4": {
-      "Acme\\BlogBundle\\": ""
+      "Mido\\BlogBundle\\": ""
     },
     "exclude-from-classmap": [
       "/Tests/"
@@ -19,7 +19,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Acme\\BlogBundle\\Tests\\": "/Tests/"
+      "Mido\\BlogBundle\\Tests\\": "/Tests/"
     }
   },
   "require": {

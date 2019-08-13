@@ -1,13 +1,13 @@
 <?php
 
 /*
- * This file is part of the AcmeBlogBundle package.
+ * This file is part of the MidoBlogBundle package.
  *
  * (c) Majid Noureddine <noureddine.digitalworks@gmail.com>
  *
  */
 
-namespace Acme\BlogBundle\Controller;
+namespace Mido\BlogBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -22,6 +22,6 @@ class DefaultController extends AbstractController
      */
     public function index()
     {
-        return $this->render('@AcmeBlog/default/index.html.twig', []);
+        return $this->render('@MidoBlog/default/index.html.twig', []);
     }
 }
