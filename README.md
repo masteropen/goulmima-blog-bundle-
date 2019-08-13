@@ -1,7 +1,7 @@
 Prerequisites
 =============
 
-This version of the bundle requires Symfony 4.3+.
+This version of the bundle requires Symfony 4.3 or higher.
 
 Installation
 ============
@@ -27,15 +27,13 @@ return [
     Goulmima\BlogBundle\GoulmimaBlogBundle::class => ['all' => true],
 ];
 ```
-For applications don't using symfony flex, you need to register the bundle:
-```php
-// app/AppKernel.php
 
-public function registerBundles()
-{
-    $bundles = array(
-        // ...
-        new Goulmima\BlogBundle\GoulmimaBlogBundle(),
-    );
-}
+### step 3 : import routes
+
+```php
+// config/routes.yaml
+
+goulmima_blog:
+    resource: '@GoulmimaBlogBundle/Controller/'
+    type:     annotation
 ```
