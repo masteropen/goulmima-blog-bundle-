@@ -1,5 +1,5 @@
 {
-  "name": "mido/blog-bundle",
+  "name": "goulmima/blog-bundle",
   "type": "symfony-bundle",
   "description": "symfony bundle demo",
   "license": "",
@@ -11,7 +11,7 @@
   ],
   "autoload" : {
     "psr-4": {
-      "Mido\\BlogBundle\\": ""
+      "Goulmima\\BlogBundle\\": ""
     },
     "exclude-from-classmap": [
       "/Tests/"
@@ -19,7 +19,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Mido\\BlogBundle\\Tests\\": "/Tests/"
+      "Goulmima\\BlogBundle\\Tests\\": "/Tests/"
     }
   },
   "require": {
