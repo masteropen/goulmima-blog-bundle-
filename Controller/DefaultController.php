@@ -12,9 +12,6 @@ namespace Goulmima\BlogBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * @Route("/goulmima")
- */
 class DefaultController extends AbstractController
 {
     /**

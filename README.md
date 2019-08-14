@@ -30,10 +30,11 @@ return [
 
 ### step 3 : import routes
 
-```php
+```yaml
 // config/routes.yaml
 
 goulmima_blog:
     resource: '@GoulmimaBlogBundle/Controller/'
-    type:     annotation
+    type: annotation
+    prefix: /some_prefix 
 ```
