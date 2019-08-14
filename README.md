@@ -35,5 +35,6 @@ return [
 
 goulmima_blog:
     resource: '@GoulmimaBlogBundle/Controller/'
-    type:     annotation
+    type: annotation
+    prefix: /some_prefix 
 ```
