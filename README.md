@@ -14,6 +14,8 @@ Open a command console, enter your project directory and execute:
 $ composer require goulmima/blog-bundle
 ```
 
+By default, this command will download the latest release version of the bundle (the recommended way). 
+
 ### Step 2 : Enable the Bundle
  
 Then, enable the bundle by adding it to the list of registered bundles
