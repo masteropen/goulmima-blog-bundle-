@@ -7,7 +7,7 @@
  *
  */
 
-namespace Acme\BlogBundle\Goulmima\BlogBundle\DependencyInjection;
+namespace Goulmima\BlogBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
