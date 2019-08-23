@@ -1,5 +1,0 @@
-goulmima_blog:
-    entities:
-        author: 'User'
-        post: 'Post'
-        comment: 'Comment'
