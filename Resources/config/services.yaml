@@ -1,0 +1,4 @@
+services:
+    # retrieve all registered posts.
+    goulmima_blog.aggregation.sum:
+        class: Goulmima\BlogBundle\Utils\Aggregation\AggregatorInterface

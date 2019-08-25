@@ -21,13 +21,7 @@ class Configuration implements ConfigurationInterface
         $treeBuilder
             ->getRootNode()
                 ->children()
-                    ->arrayNode('entities')
-                        ->children()
-                            ->scalarNode('author')->isRequired()->cannotBeEmpty()->end()
-                            ->variableNode('post')->isRequired()->cannotBeEmpty()->end()
-                            ->variableNode('comment')->isRequired()->cannotBeEmpty()->end()
-                        ->end()
-                    ->end()
+                    ->scalarNode('post')->end()
                 ->end();
 
         return $treeBuilder;
