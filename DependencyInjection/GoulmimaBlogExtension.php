@@ -25,6 +25,13 @@ class GoulmimaBlogExtension extends Extension
             $container,
             new FileLocator(__DIR__.'/../Resources/config')
         );
-        $loader->load('goulmima_blog.yaml');
+
+        $configuration = $this->getConfiguration($configs, $container);
+        $config = $this->processConfiguration($configuration, $configs);
+
+        if (isset($config['post']) && isset($config['post']['class'])) {
+            $container->setParameter('goulmima_blog.post.class', $config['post']['class']);
+            $loader->load('services.yaml');
+        }
     }
 }

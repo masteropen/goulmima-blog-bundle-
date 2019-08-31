@@ -21,8 +21,15 @@ class Configuration implements ConfigurationInterface
         $treeBuilder
             ->getRootNode()
                 ->children()
-                    ->scalarNode('post')->end()
-                ->end();
+                    ->arrayNode('post')
+                        ->children()
+                            ->variableNode('class')
+                            ->info('FQCN of the post entity')
+                            ->defaultValue('App\\Entity\\Post')
+                        ->end()
+                    ->end()
+                ->end()
+            ->end();
 
         return $treeBuilder;
     }
