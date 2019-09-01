@@ -33,10 +33,57 @@ return [
 ### step 3 : import routes
 
 ```yaml
-// config/routes.yaml
+# config/routes.yaml
 
 goulmima_blog:
     resource: '@GoulmimaBlogBundle/Controller/'
     type: annotation
     prefix: /some_prefix 
+```
+
+Usage
+=====
+
+### Step 1 : Configure the bundle
+
+```yaml
+# config/packages/goulmima_blog.yaml
+
+goulmima_blog:
+    post:
+        class: 'App\Entity\MyBlogPost'
+
+```
+### Step 2 : Prevent using `Aggregator` as service
+
+Prevent the main symfony container to `autowire` and `autoconfigure` the `Goulmima\BlogBundle\Utils\Aggregation` service :
+
+```yaml
+# config/services.yaml
+
+services:
+    # ...
+    Goulmima\BlogBundle\Utils\Aggregation\Aggregator: ~
+
+```
+### Step 3 : Implementation
+Use symfony dependency injection to access the service.
+
+Example from a controller :
+
+```php
+use App\Entity\Post;
+use Goulmima\BlogBundle\Utils\Aggregation\AggregatorInterface;
+
+/**
+ * @param AggregatorInterface $aggregator
+ * @return Response
+ *
+ * @Route("/default", name="default")
+ */
+public function index(AggregatorInterface $aggregator)
+{
+    $result = $aggregator->getSum(Post::class);
+    // do something with returned result.
+}
 ```
