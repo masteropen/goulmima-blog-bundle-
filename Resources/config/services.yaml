@@ -1,3 +1,5 @@
 services:
     # retrieve all registered posts.
+    Goulmima\BlogBundle\Utils\Aggregation\Aggregator:
+        arguments: ['@Doctrine\Common\Persistence\ObjectManager']
     Goulmima\BlogBundle\Utils\Aggregation\AggregatorInterface: '@Goulmima\BlogBundle\Utils\Aggregation\Aggregator'

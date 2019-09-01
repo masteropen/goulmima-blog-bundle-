@@ -54,20 +54,10 @@ goulmima_blog:
         class: 'App\Entity\MyBlogPost'
 
 ```
-### Step 2 : Prevent using `Aggregator` as service
 
-Prevent the main symfony container to `autowire` and `autoconfigure` the `Goulmima\BlogBundle\Utils\Aggregation` service :
+### Step 2 : Implementation
 
-```yaml
-# config/services.yaml
-
-services:
-    # ...
-    Goulmima\BlogBundle\Utils\Aggregation\Aggregator: ~
-
-```
-### Step 3 : Implementation
-Use symfony dependency injection to access the service.
+Use normal Symfony `Dependency Injection` to access the BlogBundle Aggregator services.
 
 Example from a controller :
 
