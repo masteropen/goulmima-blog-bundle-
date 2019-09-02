@@ -9,6 +9,9 @@
 
 namespace Goulmima\BlogBundle\Utils\Aggregation;
 
+/**
+ * All Aggregator services should implements this interface.
+ */
 interface AggregatorInterface
 {
     /**

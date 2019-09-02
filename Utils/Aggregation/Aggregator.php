@@ -9,21 +9,21 @@
 
 namespace Goulmima\BlogBundle\Utils\Aggregation;
 
-use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\ORM\EntityManager;
 
 class Aggregator implements AggregatorInterface
 {
     /**
-     * @var ObjectManager
+     * @var EntityManager
      */
-    private $objectManager;
+    private $entityManager;
 
     /**
-     * @param ObjectManager $objectManager
+     * @param EntityManager $entityManager
      */
-    public function __construct(ObjectManager $objectManager)
+    public function __construct(EntityManager $entityManager)
     {
-        $this->objectManager = $objectManager;
+        $this->entityManager = $entityManager;
     }
 
     /**
@@ -31,6 +31,6 @@ class Aggregator implements AggregatorInterface
      */
     public function getSum($entity)
     {
-        return $this->objectManager->getRepository($entity)->findAll();
+        return $this->entityManager->getRepository($entity)->findAll();
     }
 }
