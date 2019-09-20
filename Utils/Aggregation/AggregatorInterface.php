@@ -17,8 +17,9 @@ interface AggregatorInterface
     /**
      * Retrieve all registered posts.
      *
-     * @param string $entity. Examples : Post::class , 'App\Entity\Post'
-     * @return object[]
+     * @return int
      */
-    public function getSum($entity);
+    public function getSum();
+
+    public function getEntityName();
 }

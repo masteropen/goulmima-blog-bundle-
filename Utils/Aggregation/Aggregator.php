@@ -19,18 +19,32 @@ class Aggregator implements AggregatorInterface
     private $entityManager;
 
     /**
-     * @param EntityManager $entityManager
+     * @var string $entityName
      */
-    public function __construct(EntityManager $entityManager)
+    private $entityName;
+
+    /**
+     * @param EntityManager $entityManager
+     * @param string $entityName
+     */
+    public function __construct(EntityManager $entityManager, string $entityName)
     {
         $this->entityManager = $entityManager;
+        $this->entityName = $entityName;
     }
 
     /**
      * @inheritDoc
      */
-    public function getSum($entity)
+    public function getSum()
     {
-        return $this->entityManager->getRepository($entity)->findAll();
+        $result = $this->entityManager->getRepository($this->entityName)->findAll();
+
+        return is_array($result) ? count($result) : 0;
+    }
+
+    public function getEntityName()
+    {
+        return $this->entityName;
     }
 }
