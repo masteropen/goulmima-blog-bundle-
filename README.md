@@ -44,7 +44,33 @@ goulmima_blog:
 Usage
 =====
 
-### Step 1 : Configure the bundle
+### Step 1 : Make your posts entity
+
+```php
+namespace App\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Goulmima\BlogBundle\Entity\Post as GoulmimaBlogPost;
+
+/**
+ * @ORM\Entity()
+ */
+class MyBlogPost extends GoulmimaBlogPost
+{
+    // you can add your own attributes ...
+}
+```
+
+### Step 2 : Update the database
+
+``` console
+$ php bin/console make:migration
+```
+``` console
+$ php bin/console doctrine:migrations:migrate
+```
+
+### Step 3 : Configure the bundle
 
 ```yaml
 # config/packages/goulmima_blog.yaml
@@ -55,14 +81,17 @@ goulmima_blog:
 
 ```
 
-### Step 2 : Implementation
+### Step 4 : Implementation
 
-Use normal Symfony `Dependency Injection` to access the BlogBundle Aggregator services.
+You can access to `GoulmimaBlogBundle` services through :
+
+- Normal Symfony `Dependency Injection`.
 
 Example from a controller :
 
 ```php
-use App\Entity\Post;
+namespace App\Controller;
+
 use Goulmima\BlogBundle\Utils\Aggregation\AggregatorInterface;
 
 /**
@@ -73,7 +102,11 @@ use Goulmima\BlogBundle\Utils\Aggregation\AggregatorInterface;
  */
 public function index(AggregatorInterface $aggregator)
 {
-    $result = $aggregator->getSum(Post::class);
-    // do something with returned result.
+    // retrieve sum of registered posts based on given `goulmima_blog.post.class`
+    $result = $aggregator->getSum();
 }
 ```
+- Using directly the `DefaultController` of the bundle.
+
+Doing like so, you can access to sum of registered posts, by going to `/some_prefix` or whatever the entry point you give to the bundle's routes
+without any additional configuration.
