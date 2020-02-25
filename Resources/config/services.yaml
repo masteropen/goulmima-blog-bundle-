@@ -6,3 +6,5 @@ services:
     Goulmima\BlogBundle\Controller\DefaultController:
         class: 'Goulmima\BlogBundle\Controller\DefaultController'
         tags: ['controller.service_arguments']
+    Goulmima\BlogBundle\Twig\HandleAssetsExtension:
+        tags: ['twig.extension']

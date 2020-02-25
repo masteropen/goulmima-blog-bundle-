@@ -50,7 +50,7 @@ Usage
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Goulmima\BlogBundle\Entity\Post as GoulmimaBlogPost;
+use Goulmima\BlogBundle\Entity\BlogPost as GoulmimaBlogPost;
 
 /**
  * @ORM\Entity()
