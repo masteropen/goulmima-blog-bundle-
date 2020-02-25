@@ -110,3 +110,20 @@ public function index(AggregatorInterface $aggregator)
 
 Doing like so, you can access to sum of registered posts, by going to `/some_prefix` or whatever the entry point you give to the bundle's routes
 without any additional configuration.
+
+Configuration
+=============
+
+``` yaml
+goulmima_blog:
+    db_driver: 'orm' # see 'mongodb', api entry point ...
+    post:
+        class: 'App\Entity\BlogPost'
+        stats:
+            # type     : amcharts4 full chart name using snake_case style
+            # axis     : attribute name based on for axis
+            # abscissa : used function to get y = myFunction(x) 
+            - { type: 'date_based_data', axis: 'createdAt', abscissa: 'myFunction' }
+            - { type: 'simple_column_chart', axis: 'createdAt', abscissa: 'myAnotherFunction' }
+
+```
