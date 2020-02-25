@@ -21,14 +21,24 @@ class Configuration implements ConfigurationInterface
         $treeBuilder
             ->getRootNode()
                 ->children()
+                    ->variableNode('db_driver')
+                        ->defaultValue('orm')
+                    ->end()
                     ->arrayNode('post')
                         ->children()
-                            ->variableNode('class')
+                        ->variableNode('class')
                             ->info('FQCN of the post entity')
                             ->defaultValue('App\\Entity\\Post')
                         ->end()
+                        ->arrayNode('stats')
+                            ->normalizeKeys(false)
+                            ->useAttributeAsKey('type', true)
+                            ->defaultValue([])
+                            ->info('The list of entities to manage in the administration zone.')
+                            ->prototype('variable')
+                            ->end()
+                        ->end()
                     ->end()
-                ->end()
             ->end();
 
         return $treeBuilder;
