@@ -11,6 +11,12 @@ namespace Goulmima\BlogBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+/**
+ * Data model entity.
+ *
+ * Class BlogPost
+ * @package Goulmima\BlogBundle\Entity
+ */
 abstract class BlogPost
 {
     /**

@@ -1,5 +1,12 @@
 <?php
 
+/*
+ * This file is part of the GoulmimaBlogBundle package.
+ *
+ * (c) Majid Noureddine <noureddine.digitalworks@gmail.com>
+ *
+ */
+
 namespace Goulmima\BlogBundle\Repository;
 
 use App\Entity\BlogPost;
@@ -15,9 +22,14 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 interface BaseRepositoryInterface
 {
     /**
-     * @example return [ ['date' => '2020-03-27', 'value' => 12] ... ]
+     * This function should respect output bellow :
      *
-     * @param $unity
+     * return [
+     *    ['date' => '2020-03-27', 'value' => 12],
+     *    ['date' => '2020-03-28', 'value' => 15]
+     *    // ...
+     * ]
+     *
      * @return array
      */
     public function countItemsByDate();

@@ -27,6 +27,11 @@ interface AggregatorInterface
      * @return mixed
      */
     public function getEntityName();
-    
+
+    /**
+     * Get number of items by date.
+     *
+     * @return mixed
+     */
     public function getCountItemsByDate();
 }
