@@ -12,6 +12,12 @@ namespace Goulmima\BlogBundle\DependencyInjection;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
+/**
+ * Build and validate configuration schema.
+ * 
+ * Class Configuration
+ * @package Goulmima\BlogBundle\DependencyInjection
+ */
 class Configuration implements ConfigurationInterface
 {
     public function getConfigTreeBuilder()

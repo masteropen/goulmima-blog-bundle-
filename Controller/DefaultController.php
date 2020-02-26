@@ -20,11 +20,9 @@ class DefaultController extends AbstractController
      */
     public function index(AggregatorInterface $aggregator)
     {
-        $result = $aggregator->getSum();
-        $entityName = $aggregator->getEntityName();
+
         return $this->render('@GoulmimaBlog/default/index.html.twig', [
-            'result' => $result,
-            'entityName' => $entityName
+            'result' => $aggregator->getCountItemsByDate()
         ]);
     }
 }
