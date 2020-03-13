@@ -1,8 +1,13 @@
 services:
     # retrieve all registered posts.
     Goulmima\BlogBundle\Utils\Aggregation\Aggregator:
-        arguments: ['@doctrine.orm.default_entity_manager', '%goulmima_blog.post.class%']
+        arguments:
+            - '@doctrine.orm.default_entity_manager'
+            - '%goulmima_blog.post.class%'
+            - '%goulmima_blog.post.stats%'
     Goulmima\BlogBundle\Utils\Aggregation\AggregatorInterface: '@Goulmima\BlogBundle\Utils\Aggregation\Aggregator'
     Goulmima\BlogBundle\Controller\DefaultController:
         class: 'Goulmima\BlogBundle\Controller\DefaultController'
         tags: ['controller.service_arguments']
+    Goulmima\BlogBundle\Twig\HandleAssetsExtension:
+        tags: ['twig.extension']

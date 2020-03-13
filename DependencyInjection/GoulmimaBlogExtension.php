@@ -14,6 +14,12 @@ use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
+/**
+ * Load services files and resolve arguments.
+ *
+ * Class GoulmimaBlogExtension
+ * @package Goulmima\BlogBundle\DependencyInjection
+ */
 class GoulmimaBlogExtension extends Extension
 {
     /**
@@ -36,6 +42,14 @@ class GoulmimaBlogExtension extends Extension
                 ->replaceArgument(
                     1,
                     $config['post']['class']
+                );
+        }
+
+        if (isset($config['post']) && isset($config['post']['stats']) && isset($config['post']['stats'])) {
+            $container->getDefinition('Goulmima\BlogBundle\Utils\Aggregation\Aggregator')
+                ->replaceArgument(
+                    2,
+                    $config['post']['stats']
                 );
         }
     }

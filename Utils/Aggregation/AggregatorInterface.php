@@ -21,5 +21,17 @@ interface AggregatorInterface
      */
     public function getSum();
 
+    /**
+     * Get name FQCN of entity.
+     * 
+     * @return mixed
+     */
     public function getEntityName();
+
+    /**
+     * Get number of items by date.
+     *
+     * @return mixed
+     */
+    public function getCountItemsByDate();
 }
